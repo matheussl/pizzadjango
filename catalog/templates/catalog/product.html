@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ product }} | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ product }}</h1>
+</div>
+{% if product.photo %}
+<img src="{{ product.photo.url }}" />
+{% else %}
+<img src="http://placehold.it/300x200" />
+{% endif %}
+{{ product.description|linebreaks }}
+{% endblock %}

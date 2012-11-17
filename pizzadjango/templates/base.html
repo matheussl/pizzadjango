@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load bootstrap_toolkit %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Pizza Django{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% bootstrap_stylesheet_tag %}
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="{% url home %}">Pizza Django</a>
+            <ul class="nav">
+                <li><a href="{% url home %}" class="">Início</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {% block content %}{% endblock %}
+    <p><hr></p>
+    <footer class="row">
+        <div class="span6">
+        </div>
+        <div class="span6" style="text-align:right">
+        </div>
+    </footer>
+</div> <!-- container -->
+{% block extra_body %}
+{% endblock %}
+</body>
+</html>

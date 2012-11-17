@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul class="thumbnails">
+    {% for product in object_list %}
+    <li class="span4">
+        <div class="thumbnail">
+            {% if product.photo %}
+            <img src="{{ product.photo.url }}" alt="" />
+            {% else %}
+            <img src="http://placehold.it/300x200" alt="" />
+            {% endif %}
+              <div class="caption">
+                <h3>{{ product }}</h3>
+                <p><a href="{{ product.get_absolute_url }}" class="btn btn-primary">Saiba mais</a></p>
+              </div>
+        </div>
+    </li>
+    {% empty %}
+    <li class="span12">
+        <div class="alert alert-info">
+            Nenhum produto encontrado
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<ul class="pager">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}">Próxima</a></li>
+    {% endif %}
+</ul>
+{% endblock %}

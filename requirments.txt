@@ -1,0 +1,4 @@
+django==1.4.1
+PIL
+South
+git+git://github.com/dyve/django-bootstrap-toolkit.git#egg=bootstrap-toolkit
