@@ -36,3 +36,4 @@ nosetests.xml
 
 pizzadjango.db
 pizzadjango/media/*
+pizzadjango/settings_local.py
