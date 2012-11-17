@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 
+{% load thumbnail %}
+
 {% block content %}
+<div class="page-header">
+    <h1>Produtos em Destaque</h1>
+</div>
 <ul class="thumbnails">
     {% for product in object_list %}
     <li class="span4">
         <div class="thumbnail">
             {% if product.photo %}
-            <img src="{{ product.photo.url }}" alt="" />
+            <img src="{% thumbnail product.photo 300x200 %}" alt="{{ product }}" />
             {% else %}
-            <img src="http://placehold.it/300x200" alt="" />
+            <img src="http://placehold.it/300x200" alt="{{ product }}" />
             {% endif %}
               <div class="caption">
                 <h3>{{ product }}</h3>

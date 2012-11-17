@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     # other apps
     'south',
     'bootstrap_toolkit',
+    'easy_thumbnails',
     # my apps
     'core',
     'catalog',
